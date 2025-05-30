@@ -1,0 +1,67 @@
+/* Calendar container */
+.react-calendar {
+    border: none !important;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: '12px';
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Navigation buttons */
+  .react-calendar__navigation button {
+    color: #2f2f2f;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Days of the week */
+  .react-calendar__month-view__weekdays {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2f2f2f;
+  }
+  
+  /* Date cells */
+  .react-calendar__tile {
+    border-radius: 10%;
+    font-size: 16px;
+    color: #2f2f2f;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Selected date */
+  .react-calendar__tile--active {
+    background: #00b6b6 !important;
+    color: white !important;
+    border-radius: 10%;
+  }
+  
+  /* Hover effect */
+  .react-calendar__tile:hover {
+    background: #dcdcdc !important;
+    color: black !important;
+    border-radius: 10%;
+  }
+  
+  /* Remove extra outline */
+  .react-calendar__tile:focus {
+    outline: none;
+  }
+
+  /* Style the current day */
+.react-calendar__tile--now {
+    background: #00dcdc40 !important;
+    color: black !important;
+    border-radius: 10%;
+    font-weight: bold;
+  }
+  
+  /* Ensure selected day still has priority */
+  .react-calendar__tile--active {
+    background: #00b6b6 !important;
+    color: white !important;
+    border-radius: 10%;
+  }
