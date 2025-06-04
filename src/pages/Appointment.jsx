@@ -2,36 +2,15 @@ import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import { FaSearch } from "react-icons/fa";
 import profilePic from "../assets/profilePic.jpg";
-import Calendar from "react-calendar";
-import "./AppointmentCalendar.css";
-import "react-calendar/dist/Calendar.css";
+import CalendarView from '../components/CalendarView';
 
 const Appointments = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [selectedType, setSelectedType] = useState("Initial tax consultation");
 
-  const appointmentTypes = [
-    { name: "Routine Checkup", duration: "30 minutues" },
-    { name: "Follow-up Consultation", duration: "15 minutes" },
-    { name: "Annual Physical Exam", duration: "45 minutes" },
-    { name: "General Checkup", duration: "20 minutes" },
-  ];
-
-  const availableSlots = [
-    "9:00 AM",
-    "9:45 AM",
-    "10:30 AM",
-    "11:15 AM",
-    "12:00 PM",
-    "12:45 PM",
-    "13:30 PM",
-    "14:15 PM",
-    "15:00 PM",
-    "15:45 PM",
-    "16:30 PM",
-    "5:15 PM",
-  ];
+  
+  
   return (
     <>
       <div className="flex w-full">
@@ -69,78 +48,12 @@ const Appointments = () => {
               </div>
             </div>
           </header>
-          <div className="px-24 pt-12 bg-[#fefefe] h-[100%] w-[100%]">
+          <div className="px-24 pt-12 bg-[#fefefe] h-full w-full">
             <h1 className="px-5 text-2xl font-semibold text-primary mb-6">
               Schedule an Appointment
             </h1>
-            <p className="px-5 bg-[#fefefe] text-red-700">
-              *Appointment options are completely customizable and requirement
-              respective.
-            </p>
-            <div className="p-6">
-              {/* <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-                Book an Appointment
-                </h1> */}
-
-              <div className="mb-6">
-                <h2 className="text-lg font-medium text-gray-700 mb-4">
-                  Select appointment type
-                </h2>
-                <button className="px-6 py-2 mb-3 bg-[#013550] text-white rounded-md shadow-md hover:bg-[#002a3d] transition-all">
-                  Confirm Appointment
-                </button>
-                <div className="grid grid-cols-2 gap-4">
-                  {appointmentTypes.map((type) => (
-                    <div
-                      key={type.name}
-                      onClick={() => setSelectedType(type.name)}
-                      className={`p-4 border rounded-lg cursor-pointer shadow-sm transition-all ${
-                        selectedType === type.name
-                          ? "bg-[#00b6b6] text-white"
-                          : "bg-white text-gray-700"
-                      }`}
-                    >
-                      <p className="font-medium">{type.name}</p>
-                      <p className="text-sm">{type.duration}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex grid-cols-2">
-                <div className="mb-16">
-                  <h2 className="text-lg font-medium text-gray-700 mb-4">
-                    Select time
-                  </h2>
-                  <Calendar
-                    onChange={setSelectedDate}
-                    value={selectedDate}
-                    className="mb-4 border rounded-lg p-4 w-full h-[89%]"
-                  />
-                </div>
-
-                <div>
-                  <h2 className="text-lg font-medium text-gray-700 mb-4">
-                    Select a time slot
-                  </h2>
-                  <div className="grid grid-cols-3 gap-4">
-                    {availableSlots.map((slot) => (
-                      <button
-                        key={slot}
-                        onClick={() => setSelectedSlot(slot)}
-                        className={`p-6 text-center border rounded-lg cursor-pointer shadow-sm transition-all ${
-                          selectedSlot === slot
-                            ? "bg-[#00b6b6] text-white"
-                            : "bg-white text-gray-700"
-                        }`}
-                      >
-                        {slot}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <CalendarView />
+            
           </div>
         </div>
       </div>
