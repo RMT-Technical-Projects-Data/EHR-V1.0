@@ -52,6 +52,7 @@ const Appointments = () => {
             <h1 className="px-5 text-2xl font-semibold text-primary mb-6">
               Schedule an Appointment
             </h1>
+            
             <CalendarView />
             
           </div>
