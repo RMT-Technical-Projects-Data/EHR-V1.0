@@ -50,7 +50,7 @@ const CalendarView = () => {
   };
 
   const btnClass =
-    "bg-[#013550] text-white font-bold px-4 py-2 rounded-lg flex items-center gap-2 transition duration-300 hover:bg-[#002a3d]";
+    "bg-[#013550] text-white justify-center font-bold px-4 py-2 w-32 h-16 rounded-lg flex items-center gap-2 transition duration-300 hover:bg-[#002a3d]";
 
   return (
     <div>
@@ -59,7 +59,7 @@ const CalendarView = () => {
         {/* Dropdown Button */}
         <Menu as="div" className="relative inline-block text-left mr-2">
           <Menu.Button className={btnClass}>View</Menu.Button>
-          <Menu.Items className="absolute left-0 mt-2 w-32 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+          <Menu.Items className="absolute left-0 mt-2 w-32  origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
             {viewOptions.map((view) => (
               <Menu.Item key={view}>
                 {({ active }) => (
