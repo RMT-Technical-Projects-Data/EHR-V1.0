@@ -60,7 +60,7 @@ export default function Dashboard() {
         style={{ zIndex: 1 }}
       >
         {/* MIDDLE: Search */}
-        <div className="flex-1 flex justify-start rounded-lg left0-0">
+        <div className="full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-md xl:max-w-md flex-1 flex justify-start rounded-lg left0-0">
           <div className="relative">
             <FaSearch className="absolute top-4 left-3 text-gray-400" />
             <input
